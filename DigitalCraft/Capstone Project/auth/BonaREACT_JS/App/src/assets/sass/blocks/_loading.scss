@@ -1,0 +1,33 @@
+//=================================================
+// Loading
+//=================================================
+
+.loading {
+    background-color: $body_background_color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.lazyload {
+    &:not(.lazyloaded) {
+        position: relative;
+        background: url(../../img/loader/loader.svg) no-repeat center center;
+        background-size: 3.158rem;
+    }
+}
+
+.zoomin {
+    @extend .zoomIn;
+}
+
+.fadeinleft {
+    @extend .fadeInLeft;
+}
+
+.fadeinright {
+    @extend .fadeInRight;
+}

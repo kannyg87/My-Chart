@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "title": "Laboratory analysis | Image 1",
+        "imgSrc": "assets/img/placeholder/780x500.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Cardiology | Image 2",
+        "imgSrc": "assets/img/placeholder/780x500.jpg"
+    },
+    {
+        "id": "3",
+        "title": "Neurology | Image 3",
+        "imgSrc": "assets/img/placeholder/780x500.jpg"
+    },
+    {
+        "id": "4",
+        "title": "Dental service | Image 4",
+        "imgSrc": "assets/img/placeholder/780x500.jpg"
+    },
+    {
+        "id": "5",
+        "title": "Dental service | Image 5",
+        "imgSrc": "assets/img/placeholder/780x500.jpg"
+    },
+    {
+        "id": "6",
+        "title": "Laboratory analysis | Image 6",
+        "imgSrc": "assets/img/placeholder/780x500.jpg"
+    }
+]

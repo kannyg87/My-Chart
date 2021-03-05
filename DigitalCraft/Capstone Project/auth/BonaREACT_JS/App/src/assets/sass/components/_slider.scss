@@ -1,0 +1,661 @@
+//=================================================
+// Slider
+//=================================================
+
+/*=============================
+// ADV Swiper
+=============================*/
+.adv-swiper-container {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+	padding: 0;
+	z-index: 1;
+}
+
+.adv-swiper-container-vertical > .swiper-wrapper {
+	flex-direction: column;
+}
+
+.adv-swiper-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	display: flex;
+	transition-property: transform;
+	box-sizing: content-box;
+}
+
+.adv-swiper-container-android .adv-swiper-slide,
+.adv-swiper-wrapper {
+	transform: translate3d(0px, 0, 0);
+}
+
+.adv-swiper-container-multirow > .adv-swiper-wrapper {
+	flex-wrap: wrap;
+}
+
+.adv-swiper-container-multirow-column > .adv-swiper-wrapper {
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.adv-swiper-container-free-mode > .adv-swiper-wrapper {
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+
+.adv-swiper-slide {
+	flex-shrink: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transition-property: transform;
+}
+
+.adv-swiper-slide-invisible-blank {
+	visibility: hidden;
+}
+
+// Auto Height
+.adv-swiper-container-autoheight,
+.adv-swiper-container-autoheight .adv-swiper-slide {
+	height: auto;
+}
+
+.adv-swiper-container-autoheight .adv-swiper-wrapper {
+	align-items: flex-start;
+	transition-property: transform, height;
+}
+
+// 3D Effects
+.adv-swiper-container-3d {
+	perspective: 1200px;
+}
+
+.adv-swiper-container-3d .adv-swiper-wrapper,
+.adv-swiper-container-3d .adv-swiper-slide,
+.adv-swiper-container-3d .adv-swiper-slide-shadow-left,
+.adv-swiper-container-3d .adv-swiper-slide-shadow-right,
+.adv-swiper-container-3d .adv-swiper-slide-shadow-top,
+.adv-swiper-container-3d .adv-swiper-slide-shadow-bottom,
+.adv-swiper-container-3d .adv-swiper-cube-shadow {
+	transform-style: preserve-3d;
+}
+
+.adv-swiper-container-3d .adv-swiper-slide-shadow-left,
+.adv-swiper-container-3d .adv-swiper-slide-shadow-right,
+.adv-swiper-container-3d .adv-swiper-slide-shadow-top,
+.adv-swiper-container-3d .adv-swiper-slide-shadow-bottom {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 10;
+}
+
+.adv-swiper-container-3d .adv-swiper-slide-shadow-left {
+	background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+.adv-swiper-container-3d .adv-swiper-slide-shadow-right {
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+.adv-swiper-container-3d .adv-swiper-slide-shadow-top {
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+.adv-swiper-container-3d .adv-swiper-slide-shadow-bottom {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+// CSS Mode
+.adv-swiper-container-css-mode > .adv-swiper-wrapper {
+	overflow: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.adv-swiper-container-css-mode > .adv-swiper-wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.adv-swiper-container-css-mode > .adv-swiper-wrapper > .adv-swiper-slide {
+	scroll-snap-align: start start;
+}
+
+.adv-swiper-container-horizontal.adv-swiper-container-css-mode > .adv-swiper-wrapper {
+	scroll-snap-type: x mandatory;
+}
+
+.adv-swiper-container-vertical.adv-swiper-container-css-mode > .adv-swiper-wrapper {
+	scroll-snap-type: y mandatory;
+}
+
+:root {
+	--swiper-navigation-size: 44px;
+}
+
+.adv-swiper-button-prev,
+.adv-swiper-button-next {
+	position: absolute;
+	top: 50%;
+	width: calc(var(--swiper-navigation-size) / 44 * 27);
+	height: var(--swiper-navigation-size);
+	margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
+	z-index: 10;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: $slider_button_color;
+}
+
+.adv-swiper-button-prev.adv-swiper-button-disabled,
+.adv-swiper-button-next.adv-swiper-button-disabled {
+	opacity: 0.6;
+	cursor: auto;
+	pointer-events: none;
+}
+
+.adv-swiper-button-prev:after,
+.adv-swiper-button-next:after {
+	font-family: swiper-icons;
+	font-size: var(--swiper-navigation-size);
+	text-transform: none !important;
+	letter-spacing: 0;
+	text-transform: none;
+	font-variant: initial;
+}
+
+.adv-swiper-button-prev,
+.adv-swiper-container-rtl .adv-swiper-button-next {
+	left: 10px;
+	right: auto;
+}
+
+.adv-swiper-button-prev:after,
+.adv-swiper-container-rtl .adv-swiper-button-next:after {
+	content: 'prev';
+}
+
+.adv-swiper-button-next,
+.adv-swiper-container-rtl .adv-swiper-button-prev {
+	right: 10px;
+	left: auto;
+}
+
+.adv-swiper-button-next:after,
+.adv-swiper-container-rtl .adv-swiper-button-prev:after {
+	content: 'next';
+}
+
+.adv-swiper-button-prev.adv-swiper-button-white,
+.adv-swiper-button-next.adv-swiper-button-white {
+	--swiper-navigation-color: #ffffff;
+}
+
+.adv-swiper-button-prev.adv-swiper-button-black,
+.adv-swiper-button-next.adv-swiper-button-black {
+	--swiper-navigation-color: #000000;
+}
+
+.adv-swiper-button-lock {
+	display: none;
+}
+
+.adv-swiper-pagination {
+	position: absolute;
+	text-align: center;
+	transition: 300ms opacity;
+	transform: translate3d(0, 0, 0);
+	z-index: 10;
+}
+
+.adv-swiper-pagination.adv-swiper-pagination-hidden {
+	opacity: 0;
+}
+
+// Common Styles
+.adv-swiper-pagination-fraction,
+.adv-swiper-pagination-custom,
+.adv-swiper-container-horizontal > .adv-swiper-pagination-bullets {
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+}
+
+// Bullets
+.adv-swiper-pagination-bullets-dynamic {
+	overflow: hidden;
+	font-size: 0;
+}
+
+.adv-swiper-pagination-bullets-dynamic .adv-swiper-pagination-bullet {
+	transform: scale(0.33);
+	position: relative;
+}
+
+.adv-swiper-pagination-bullets-dynamic .adv-swiper-pagination-bullet-active {
+	transform: scale(1);
+}
+
+.adv-swiper-pagination-bullets-dynamic .adv-swiper-pagination-bullet-active-main {
+	transform: scale(1);
+}
+
+.adv-swiper-pagination-bullets-dynamic .adv-swiper-pagination-bullet-active-prev {
+	transform: scale(0.66);
+}
+
+.adv-swiper-pagination-bullets-dynamic .adv-swiper-pagination-bullet-active-prev-prev {
+	transform: scale(0.33);
+}
+
+.adv-swiper-pagination-bullets-dynamic .adv-swiper-pagination-bullet-active-next {
+	transform: scale(0.66);
+}
+
+.adv-swiper-pagination-bullets-dynamic .adv-swiper-pagination-bullet-active-next-next {
+	transform: scale(0.33);
+}
+
+.adv-swiper-pagination-bullet {
+	width: 20px;
+	height: 4px;
+	display: inline-block;
+	background: $slider_button_color;
+	outline: none;
+	margin-left: $space_xs / 2;
+	margin-right: $space_xs / 2;
+	@extend .transition-all;
+
+	&:hover {
+		background: $slider_button_hover_color;
+	}
+}
+
+button.adv-swiper-pagination-bullet {
+	border: none;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.adv-swiper-pagination-clickable .adv-swiper-pagination-bullet {
+	cursor: pointer;
+}
+
+.adv-swiper-pagination-bullet-active {
+	background: $slider_button_hover_color;
+}
+
+.adv-swiper-container-vertical > .adv-swiper-pagination-bullets {
+	right: 10px;
+	top: 50%;
+	transform: translate3d(0px, -50%, 0);
+}
+
+.adv-swiper-container-vertical > .adv-swiper-pagination-bullets .adv-swiper-pagination-bullet {
+	margin: 6px 0;
+	display: block;
+}
+
+.adv-swiper-container-vertical > .adv-swiper-pagination-bullets.adv-swiper-pagination-bullets-dynamic {
+	top: 50%;
+	transform: translateY(-50%);
+	width: 8px;
+}
+
+.adv-swiper-container-vertical > .adv-swiper-pagination-bullets.adv-swiper-pagination-bullets-dynamic .adv-swiper-pagination-bullet {
+	display: inline-block;
+	transition: 200ms transform, 200ms top;
+}
+
+.adv-swiper-container-horizontal > .adv-swiper-pagination-bullets .adv-swiper-pagination-bullet {
+	margin: 0 4px;
+}
+
+.adv-swiper-container-horizontal > .adv-swiper-pagination-bullets.adv-swiper-pagination-bullets-dynamic {
+	left: 50%;
+	transform: translateX(-50%);
+	white-space: nowrap;
+}
+
+.adv-swiper-container-horizontal > .adv-swiper-pagination-bullets.adv-swiper-pagination-bullets-dynamic .adv-swiper-pagination-bullet {
+	transition: 200ms transform, 200ms left;
+}
+
+.adv-swiper-container-horizontal.adv-swiper-container-rtl > .adv-swiper-pagination-bullets-dynamic .adv-swiper-pagination-bullet {
+	transition: 200ms transform, 200ms right;
+}
+
+// Progress
+.adv-swiper-pagination-progressbar {
+	background: rgba(0, 0, 0, 0.25);
+	position: absolute;
+}
+
+.adv-swiper-pagination-progressbar .adv-swiper-pagination-progressbar-fill {
+	background: $slider_button_hover_color;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	transform: scale(0);
+	transform-origin: left top;
+}
+
+.adv-swiper-container-rtl .adv-swiper-pagination-progressbar .adv-swiper-pagination-progressbar-fill {
+	transform-origin: right top;
+}
+
+.adv-swiper-container-horizontal > .adv-swiper-pagination-progressbar,
+.adv-swiper-container-vertical > .adv-swiper-pagination-progressbar.adv-swiper-pagination-progressbar-opposite {
+	width: 100%;
+	height: 4px;
+	left: 0;
+	top: 0;
+}
+
+.adv-swiper-container-vertical > .adv-swiper-pagination-progressbar,
+.adv-swiper-container-horizontal > .adv-swiper-pagination-progressbar.adv-swiper-pagination-progressbar-opposite {
+	width: 4px;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+.adv-swiper-pagination-white {
+	--swiper-pagination-color: #ffffff;
+}
+
+.adv-swiper-pagination-black {
+	--swiper-pagination-color: #000000;
+}
+
+.adv-swiper-pagination-lock {
+	display: none;
+}
+
+// Scrollbar
+.adv-swiper-scrollbar {
+	border-radius: 10px;
+	position: relative;
+	-ms-touch-action: none;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.adv-swiper-container-horizontal > .adv-swiper-scrollbar {
+	position: absolute;
+	left: 1%;
+	bottom: 3px;
+	z-index: 50;
+	height: 5px;
+	width: 98%;
+}
+
+.adv-swiper-container-vertical > .adv-swiper-scrollbar {
+	position: absolute;
+	right: 3px;
+	top: 1%;
+	z-index: 50;
+	width: 5px;
+	height: 98%;
+}
+
+.adv-swiper-scrollbar-drag {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	left: 0;
+	top: 0;
+}
+
+.adv-swiper-scrollbar-cursor-drag {
+	cursor: move;
+}
+
+.adv-swiper-scrollbar-lock {
+	display: none;
+}
+
+.adv-swiper-zoom-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.adv-swiper-zoom-container > img,
+.adv-swiper-zoom-container > svg,
+.adv-swiper-zoom-container > canvas {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+
+.adv-swiper-slide-zoomed {
+	cursor: move;
+}
+
+// Preloader
+.adv-swiper-lazy-preloader {
+	width: 42px;
+	height: 42px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -21px;
+	margin-top: -21px;
+	z-index: 10;
+	transform-origin: 50%;
+	animation: swiper-preloader-spin 1s infinite linear;
+	box-sizing: border-box;
+	border: 4px solid $slider_button_hover_color;
+	border-radius: 50%;
+	border-top-color: transparent;
+}
+
+.adv-swiper-lazy-preloader-white {
+	--swiper-preloader-color: #fff;
+}
+
+.adv-swiper-lazy-preloader-black {
+	--swiper-preloader-color: #000;
+}
+
+@keyframes swiper-preloader-spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+// a11y
+.adv-swiper-container .adv-swiper-notification {
+	position: absolute;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	opacity: 0;
+	z-index: -1000;
+}
+
+.adv-swiper-container-fade.adv-swiper-container-free-mode .adv-swiper-slide {
+	transition-timing-function: ease-out;
+}
+
+.adv-swiper-container-fade .adv-swiper-slide {
+	pointer-events: none;
+	transition-property: opacity;
+}
+
+.adv-swiper-container-fade .adv-swiper-slide .swiper-slide {
+	pointer-events: none;
+}
+
+.adv-swiper-container-fade .adv-swiper-slide-active,
+.adv-swiper-container-fade .adv-swiper-slide-active .adv-swiper-slide-active {
+	pointer-events: auto;
+}
+
+.adv-swiper-container-cube {
+	overflow: visible;
+}
+
+.adv-swiper-container-cube .adv-swiper-slide {
+	pointer-events: none;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	z-index: 1;
+	visibility: hidden;
+	transform-origin: 0 0;
+	width: 100%;
+	height: 100%;
+}
+
+.adv-swiper-container-cube .adv-swiper-slide .adv-swiper-slide {
+	pointer-events: none;
+}
+
+.adv-swiper-container-cube.adv-swiper-container-rtl .adv-swiper-slide {
+	transform-origin: 100% 0;
+}
+
+.adv-swiper-container-cube .adv-swiper-slide-active,
+.adv-swiper-container-cube .adv-swiper-slide-active .adv-swiper-slide-active {
+	pointer-events: auto;
+}
+
+.adv-swiper-container-cube .adv-swiper-slide-active,
+.adv-swiper-container-cube .adv-swiper-slide-next,
+.adv-swiper-container-cube .adv-swiper-slide-prev,
+.adv-swiper-container-cube .adv-swiper-slide-next + .adv-swiper-slide {
+	pointer-events: auto;
+	visibility: visible;
+}
+
+.adv-swiper-container-cube .adv-swiper-slide-shadow-top,
+.adv-swiper-container-cube .adv-swiper-slide-shadow-bottom,
+.adv-swiper-container-cube .adv-swiper-slide-shadow-left,
+.adv-swiper-container-cube .adv-swiper-slide-shadow-right {
+	z-index: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.adv-swiper-container-cube .adv-swiper-cube-shadow {
+	position: absolute;
+	left: 0;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.6;
+	-webkit-filter: blur(50px);
+	filter: blur(50px);
+	z-index: 0;
+}
+
+.adv-swiper-container-flip {
+	overflow: visible;
+}
+
+.adv-swiper-container-flip .adv-swiper-slide {
+	pointer-events: none;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	z-index: 1;
+}
+
+.adv-swiper-container-flip .adv-swiper-slide .adv-swiper-slide {
+	pointer-events: none;
+}
+
+.adv-swiper-container-flip .adv-swiper-slide-active,
+.adv-swiper-container-flip .adv-swiper-slide-active .adv-swiper-slide-active {
+	pointer-events: auto;
+}
+
+.adv-swiper-container-flip .adv-swiper-slide-shadow-top,
+.adv-swiper-container-flip .adv-swiper-slide-shadow-bottom,
+.adv-swiper-container-flip .adv-swiper-slide-shadow-left,
+.adv-swiper-container-flip .adv-swiper-slide-shadow-right {
+	z-index: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+/*=============================
+// Slider
+=============================*/
+$slider_button_width:  3.368rem;
+$slider_button_height: 3.368rem;
+
+.adv-swiper-container {
+	.adv-swiper-slide {
+		background-size: cover;
+		background-position: center;
+	}
+
+	.adv-2-swiper-button {
+		&-prev, &-next {
+			position: absolute;
+			top: 50%;
+			@include transform(translateY(-50%));
+			@extend .transition-all;
+			cursor: pointer;
+			outline: none;
+			z-index: 1;
+			color: $slider_button_color;
+			background-color: $slider_button_background_color;
+			width: $slider_button_width;
+			height: $slider_button_height;
+
+			&:hover {
+				color: $slider_button_hover_color;
+				background-color: $slider_button_hover_background_color;
+			}
+
+			&.adv-swiper-button-disabled {
+				cursor: not-allowed;
+				opacity: 1;
+
+				&:hover {
+					color: $slider_button_color;
+					background-color: $slider_button_background_color;
+				}
+			}
+
+			[class*='fa-'], button {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				@include transform(translate(-50%, -50%));
+				font-size: $f_size_lg;
+			}
+		}
+
+		&-prev {
+			left: 0;
+		}
+
+		&-next {
+			right: 0;
+		}
+	}
+}

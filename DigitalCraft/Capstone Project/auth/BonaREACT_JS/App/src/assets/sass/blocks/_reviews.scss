@@ -1,0 +1,110 @@
+//=================================================
+// Reviews
+//=================================================
+
+.reviews-items {
+	.reviews-item {
+		width: 100%;
+	}
+}
+
+/*=============================
+// Reviews slider
+=============================*/
+.adv-slider-reviews {
+	position: relative;
+	padding-left: 3.684rem;
+	margin-top: -$h3_font_mb;
+
+	.adv-slider-reviews-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		max-width: 5.895rem;
+	}
+
+	.adv-swiper-container {
+		&.reviews-text {
+			.reviews-text-items {
+				.reviews-text-item {
+					.reviews-text-item-content {
+						> * {
+							&:before, &:after {
+								display: none;
+							}
+
+							font-size: $h3_font_size;
+							color: $body_main_element_secondary_color;
+							line-height: 1.61;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.thumbs {
+		margin-top: $space_lg - $h3_font_mb;
+		max-width: 500px;
+
+		@media #{$media_md} {
+			margin-left: -3.947rem;
+			flex-direction: column !important;
+		}
+
+		.adv-swiper-container {
+			&.reviews-thumbs {
+				width: 11.053rem;
+				height: 3.158rem;
+				margin: 0;
+				margin-right: 0.579rem;
+
+				@media #{$media_md} {
+					margin-right: -1.053rem;
+				}
+
+				.reviews-thumbs-items {
+					.reviews-thumbs-item {
+						@extend .d-flex;
+						@extend .align-items-center;
+						@extend .transition-all;
+						width: 2.632rem !important;
+						margin-right: 1.053rem !important;
+
+						img {
+							width: 2.632rem !important;
+							height: 2.632rem !important;
+							border-radius: 50%;
+							cursor: pointer;
+							@extend .transition-all;
+							max-width: inherit !important;
+						}
+
+						&.adv-swiper-slide-thumb-active {
+							width: 3.158rem !important;
+
+							img {
+								width: 3.158rem !important;
+								height: 3.158rem !important;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.reviews-results {
+			@extend .style-default;
+
+			@media #{$media_md} {
+				margin-top: 1.053rem;
+				text-align: center;
+			}
+
+			.reviews-positions {
+				margin-top: -0.895rem;
+				font-size: $f_size_df;
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "Electrocardiogram",
+        "price": "From $25"
+    },
+    {
+        "id": 2,
+        "title": "Holter observation",
+        "price": "From $60"
+    },
+    {
+        "id": 3,
+        "title": "Ultrasound of the heart",
+        "price": "From $65"
+    },
+    {
+        "id": 4,
+        "title": "Echocardiography",
+        "price": "From $45"
+    }
+]

@@ -1,0 +1,24 @@
+//=================================================
+// Links
+//=================================================
+
+a {
+    color: $body_links_color;
+    @extend .transition-all;
+    
+    &:hover {
+        color: $body_links_hover_color;
+        text-decoration: none;
+        @extend .transition-all;
+    }
+
+    // Small
+    &.a-small {
+        font-size: $f_size_df;
+    }
+
+    // Large
+    &.a-large {
+        font-size: $f_size_lg * 1.3;
+    }
+}

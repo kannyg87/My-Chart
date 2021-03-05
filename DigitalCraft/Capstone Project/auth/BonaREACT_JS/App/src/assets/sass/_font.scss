@@ -1,0 +1,90 @@
+//=================================================
+// Fonts
+//=================================================
+
+// Poppins-Regular
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../fonts/Poppins/Poppins-Regular/Poppins-Regular.eot');
+    src: url('../fonts/Poppins/Poppins-Regular/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Poppins/Poppins-Regular/Poppins-Regular.woff2') format('woff2'),
+         url('../fonts/Poppins/Poppins-Regular/Poppins-Regular.woff') format('woff'),
+         url('../fonts/Poppins/Poppins-Regular/Poppins-Regular.ttf') format('truetype'),
+         url('../fonts/Poppins/Poppins-Regular/Poppins-Regular.svg#Poppins-Regular') format('svg');
+    font-style: normal;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+// Poppins-Bold
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('../fonts/Poppins/Poppins-Bold/Poppins-Bold.eot');
+    src: url('../fonts/Poppins/Poppins-Bold/Poppins-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Poppins/Poppins-Bold/Poppins-Bold.woff2') format('woff2'),
+         url('../fonts/Poppins/Poppins-Bold/Poppins-Bold.woff') format('woff'),
+         url('../fonts/Poppins/Poppins-Bold/Poppins-Bold.ttf') format('truetype'),
+         url('../fonts/Poppins/Poppins-Bold/Poppins-Bold.svg#Poppins-Bold') format('svg');
+    font-style: normal;
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+}
+
+// Roboto-Regular
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto/Roboto-Regular/Roboto-Regular.eot');
+    src: url('../fonts/Roboto/Roboto-Regular/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto/Roboto-Regular/Roboto-Regular.woff2') format('woff2'),
+         url('../fonts/Roboto/Roboto-Regular/Roboto-Regular.woff') format('woff'),
+         url('../fonts/Roboto/Roboto-Regular/Roboto-Regular.ttf') format('truetype'),
+         url('../fonts/Roboto/Roboto-Regular/Roboto-Regular.svg#Roboto-Regular') format('svg');
+    font-style: normal;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+// Roboto-Medium
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('../fonts/Roboto/Roboto-Medium/Roboto-Medium.eot');
+    src: url('../fonts/Roboto/Roboto-Medium/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto/Roboto-Medium/Roboto-Medium.woff2') format('woff2'),
+         url('../fonts/Roboto/Roboto-Medium/Roboto-Medium.woff') format('woff'),
+         url('../fonts/Roboto/Roboto-Medium/Roboto-Medium.ttf') format('truetype'),
+         url('../fonts/Roboto/Roboto-Medium/Roboto-Medium.svg#Roboto-Medium') format('svg');
+    font-style: normal;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+}
+
+// Roboto-Bold
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('../fonts/Roboto/Roboto-Bold/Roboto-Bold.eot');
+    src: url('../fonts/Roboto/Roboto-Bold/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto/Roboto-Bold/Roboto-Bold.woff2') format('woff2'),
+         url('../fonts/Roboto/Roboto-Bold/Roboto-Bold.woff') format('woff'),
+         url('../fonts/Roboto/Roboto-Bold/Roboto-Bold.ttf') format('truetype'),
+         url('../fonts/Roboto/Roboto-Bold/Roboto-Bold.svg#Roboto-Bold') format('svg');
+    font-style: normal;
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+}
+
+/*=============================
+// Font size
+=============================*/
+.font-size {
+    &-sm {
+        font-size: $f_size_sm;
+    }
+
+    &-df {
+        font-size: $f_size_df;
+    }
+
+    &-lg {
+        font-size: $f_size_lg;
+    }
+}

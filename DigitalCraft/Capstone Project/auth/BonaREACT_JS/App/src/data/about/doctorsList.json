@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "name": "Tom Harris",
+        "image": "assets/img/placeholder/507x600.jpg",
+        "position": "Traumatologist",
+        "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots.",
+        "FbLink": "https://www.facebook.com/adveits/",
+        "LiLink": "https://www.facebook.com/adveits/",
+        "IgLink": "https://www.facebook.com/adveits/",
+        "TwLink": "https://www.facebook.com/adveits/"
+    },
+    {
+        "id": 2,
+        "name": "Victoria Brown",
+        "image": "assets/img/placeholder/507x600.jpg",
+        "position": "Dentist",
+        "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots.",
+        "FbLink": "https://www.facebook.com/adveits/",
+        "LiLink": "https://www.facebook.com/adveits/",
+        "IgLink": "https://www.facebook.com/adveits/",
+        "TwLink": "https://www.facebook.com/adveits/"
+    },
+    {
+        "id": 3,
+        "name": "Jorgie Driscoll",
+        "image": "assets/img/placeholder/507x600.jpg",
+        "position": "Surgeon",
+        "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots.",
+        "FbLink": "https://www.facebook.com/adveits/",
+        "LiLink": "https://www.facebook.com/adveits/",
+        "IgLink": "https://www.facebook.com/adveits/",
+        "TwLink": "https://www.facebook.com/adveits/"
+    }
+]

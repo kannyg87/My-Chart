@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "title": "Facebook",
+        "link": "https://www.facebook.com/adveits/",
+        "icon": "fab fa-facebook-f"
+    },
+    {
+        "id": "2",
+        "title": "LinkedIn",
+        "link": "https://www.linkedin.com/company/18135051/",
+        "icon": "fab fa-linkedin-in"
+    },
+    {
+        "id": "3",
+        "title": "Instagram",
+        "link": "https://www.instagram.com/adveits/",
+        "icon": "fab fa-instagram"
+    },
+    {
+        "id": "4",
+        "title": "Twitter",
+        "link": "https://www.twitter.com/adveits/",
+        "icon": "fab fa-twitter"
+    }
+]

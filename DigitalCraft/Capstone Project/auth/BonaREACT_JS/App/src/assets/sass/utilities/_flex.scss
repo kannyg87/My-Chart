@@ -1,0 +1,13 @@
+//=================================================
+// Flex
+//=================================================
+
+[class*='-element'] {
+	&.justify-content-end {
+		> [class*='r-container'] {
+			> [class*='-row'] {
+				@extend .justify-content-end;
+			}
+		}
+	}
+}

@@ -1,0 +1,95 @@
+//=================================================
+// Card
+//=================================================
+
+.card {
+	.card-header {
+		padding: $card-spacer-y $card-spacer-x;
+		margin-bottom: 0 !important;
+		@extend .after;
+	}
+
+	.card-meta {
+		position: relative;
+		margin-bottom: $space_xs - $p_font_mb + 0.211rem;
+
+		.btn {
+			color: inherit;
+
+			&.btn-before-horbar {
+				&:before {
+					color: inherit;
+					transition: color 0s ease;
+				}
+			}
+
+			&:hover {
+				color: $body_links_color;
+			}
+
+			a {
+				color: inherit;
+				transition: color 0s ease;
+			}
+		}
+	}
+
+	.card-body {
+		padding: $card-spacer-y $card-spacer-x;
+	}
+
+	.card-footer {
+		padding: $card-spacer-y $card-spacer-x;
+	}
+
+	ul {
+		margin-bottom: 0 !important;
+	}
+}
+
+/*=============================
+// Card Columns
+=============================*/
+.card-columns {
+	&.columns-4 {
+		column-count: 4;
+	}
+
+	&.column-no-gap {
+		column-gap: 0;
+	}
+}
+
+/*=============================
+// Accordion card
+=============================*/
+.accordion {
+	.card {
+		.card-header {
+			position: relative;
+			border: 0;
+		}
+	}
+
+	.btn-link {
+		width: 100%;
+		text-align: left;
+
+		[class*='fa-'] {
+			position: absolute;
+			top: 50%;
+			right: $card-spacer-x;
+			@include transform(translateY(-50%));
+		}
+
+		[class*='fa-'] {
+			@include transform(translateY(-50%) rotate(90deg));
+		}
+
+		&.collapsed {
+			[class*='fa-'] {
+				@include transform(translateY(-50%) rotate(0));
+			}
+		}
+	}
+}

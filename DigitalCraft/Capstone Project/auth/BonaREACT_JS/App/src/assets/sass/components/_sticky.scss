@@ -1,0 +1,37 @@
+//=================================================
+// Sticky
+//=================================================
+
+.js-sticky {
+    height: 100vh !important;
+
+    &-fixed {
+        position: fixed;
+    }
+}
+
+.sticky-fixed {
+    &-lg {
+        position: fixed;
+        top: 0;
+        overflow: scroll;
+        height: 100vh;
+
+        @media #{$media_lg} {
+            position: static;
+            height: auto;
+        }
+    }
+
+    &-md {
+        position: fixed;
+        top: 0;
+        overflow: scroll;
+        height: 100vh;
+
+        @media #{$media_md} {
+            position: static;
+            height: auto;
+        }
+    }
+}

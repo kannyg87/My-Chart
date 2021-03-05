@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "imgLink": "/news-single-post",
+        "imgSrc": "assets/img/placeholder/81x81.jpg",
+        "imgAlt": "5 Reasons to have Aortic Surgery",
+        "headTitle": "5 Reasons to have Aortic Surgery",
+        "headLink": "/news-single-post"
+    },
+    {
+        "id": 2,
+        "imgLink": "/news-single-post",
+        "imgSrc": "assets/img/placeholder/81x81.jpg",
+        "imgAlt": "Which Diagnostic Should I Choose?",
+        "headTitle": "Which Diagnostic Should I Choose?",
+        "headLink": "/news-single-post"
+    },
+    {
+        "id": 3,
+        "imgLink": "/news-single-post",
+        "imgSrc": "assets/img/placeholder/81x81.jpg",
+        "imgAlt": "How to Fight Dental Caries Effectively?",
+        "headTitle": "How to Fight Dental Caries Effectively?",
+        "headLink": "/news-single-post"
+    },
+    {
+        "id": 4,
+        "imgLink": "/news-single-post",
+        "imgSrc": "assets/img/placeholder/81x81.jpg",
+        "imgAlt": "5 Reasons to have Aortic Surgery",
+        "headTitle": "5 Reasons to have Aortic Surgery",
+        "headLink": "/news-single-post"
+    }
+]

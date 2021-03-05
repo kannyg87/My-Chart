@@ -1,0 +1,87 @@
+//=================================================
+// Colors
+//=================================================
+
+/*=============================
+// Text white
+=============================*/
+.text-white {
+	color: $white;
+
+	[class*='widget-text-editor'] {
+		color: $white;
+	}
+
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cit, code,
+	del, dfn, em, ins, q, samp, small, strong, sub, sup, b, i, hr, dl, dt, dd,
+	ol, ul, li, fieldset, legend, label, span, caption, figcaption, details, hgroup, summary, mark, audio, video {
+		&:not(.btn) {
+			color: inherit !important;
+		}
+	}
+
+	a {
+		&:not(.transform-scale-h):not(.btn) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	.btn {
+		&.btn-link {
+			color: $white;
+		}
+	}
+
+	.blockquote, blockquote {
+		color: $white !important;
+		border-color: $white !important;
+	}
+}
+
+/*=============================
+// Text tertiary
+=============================*/
+.text-tertiary {
+	color: $body_text_tertiary_color;
+
+	[class*='widget-text-editor'] {
+		color: $body_text_tertiary_color;
+	}
+
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cit, code,
+	del, dfn, em, ins, q, samp, small, strong, sub, sup, b, i, hr, dl, dt, dd,
+	ol, ul, li, fieldset, legend, label, span, caption, figcaption, details, hgroup, summary, mark, audio, video {
+		&:not(.btn) {
+			color: inherit !important;
+		}
+	}
+
+	a {
+		&:not(.transform-scale-h):not(.btn) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+}
+
+/*=============================
+// Block cover
+=============================*/
+[class*='-block-cover'] {
+	p {
+		&:not(.has-text-color) {
+			color: $white;
+
+			a {
+				color: $white;
+
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+}

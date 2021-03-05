@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "Consultation with a cardiologist",
+        "price": "From $65"
+    },
+    {
+        "id": 2,
+        "title": "Repeated consultation with a cardiologistConsultation with a cardiologist",
+        "price": "From $45"
+    },
+    {
+        "id": 3,
+        "title": "Consultation with a cardiac surgeon",
+        "price": "From $65"
+    },
+    {
+        "id": 4,
+        "title": "Repeated Consultation with a cardiac surgeon",
+        "price": "From $45"
+    }
+]

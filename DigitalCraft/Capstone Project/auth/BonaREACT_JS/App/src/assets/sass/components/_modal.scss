@@ -1,0 +1,200 @@
+//=================================================
+// Modal
+//=================================================
+
+$modal_header_link_space: 3.895rem;
+$modal_header_actions_space: 7.158rem;
+
+.modal {
+	background-color: $modal_background_color;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left top;
+	min-width: 320px;
+
+	.wrapper {
+		&:not(.padding-right) {
+			padding-right: 0;
+
+			@media #{$media_md} {
+				padding-right: $wrapper_p_r_sm;
+			}
+
+			.modal-body {
+				padding-right: $wrapper_p_r;
+
+				@media #{$media_xxl} {
+					padding-right: $wrapper_p_r_xxl;
+				}
+
+				@media #{$media_xl} {
+					padding-right: $wrapper_p_r_xl;
+				}
+
+				@media #{$media_md} {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+
+	.modal-dialog {
+		.modal-header {
+			.close {
+				&.btn {
+					padding: 0.75rem;
+					margin: 0 -0.75rem 0 auto;
+					font-size: 1.263rem;
+				}
+			}
+		}
+
+		.modal-content {
+			.modal-text {
+				text-align: center;
+				color: rgba($modal_content_color, 0.6);
+			}
+
+			// Color
+			color: $modal_content_color;
+
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cit, code,
+			del, dfn, em, ins, q, samp, small, strong, sub, sup, b, i, hr, dl, dt, dd,
+			ol, ul, li, fieldset, legend, label, span, caption, figcaption, details, hgroup, summary, mark, audio, video {
+				color: inherit;
+			}
+
+			.close {
+				span {
+					color: $modal_content_color;
+				}
+			}
+
+			.btn-link {
+				@extend .transition-opacity;
+				color: inherit;
+
+				&.btn-before-horbar {
+					&:before {
+						color: inherit;
+					}
+				}
+
+				&.btn-after-horbar {
+					&:after {
+						color: inherit;
+					}
+				}
+
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+}
+
+.logged-in {
+	&.admin-bar {
+		.modal {
+			padding-top: 32px;
+
+			@media #{$media_lg} {
+				padding-top: 46px;
+			}
+		}
+	}
+}
+
+/*=============================
+// Modal size
+=============================*/
+.modal-full {
+	max-width: 100%;
+	margin: 0;
+}
+
+/*=============================
+// Modal header
+=============================*/
+.modal-header-top {
+	position: absolute;
+	z-index: 99;
+	width: 100%;
+}
+
+/*=============================
+// Modal body
+=============================*/
+.modal-body-centered {
+	display: flex;
+	align-items: center;
+	min-height: 100%;
+	padding: 0;
+
+	&::before {
+		content: "";
+		display: block;
+		height: 100vh;
+	}
+}
+
+/*=============================
+// Modal title
+=============================*/
+.modal-title {
+	margin-bottom: 0 !important;
+	@extend .after;
+}
+
+/*=============================
+// Modal menu
+=============================*/
+#menu-modal {
+	.modal-body {
+		max-width: 42.368rem + $wrapper_p_r;
+		margin: auto;
+		width: 100%;
+
+		@media #{$media_xxl} {
+			max-width: 36.842rem + $wrapper_p_r;
+		}
+
+		.animated {
+			padding-top: $header_padding_t + 8.421rem; // 8.421rem - max logo size
+			padding-bottom: 6.316rem;
+		}
+
+		.menu-secondary {
+			padding-top: 3.947rem;
+		}
+
+		.modal-text {
+			padding-top: $space_xl - 0.526rem;
+		}
+	}
+
+	.modal-footer {
+		position: absolute;
+		bottom: $space_lg;
+
+		@media #{$media_md} {
+			left: 50%;
+			@include transform(translateX(-50%));
+		}
+	}
+}
+
+/*=============================
+// Modal search
+=============================*/
+
+#search-modal {
+	.modal-body {
+		form {
+			width: 100%;
+			max-width: 1050px;
+			margin: auto;
+		}
+	}
+}

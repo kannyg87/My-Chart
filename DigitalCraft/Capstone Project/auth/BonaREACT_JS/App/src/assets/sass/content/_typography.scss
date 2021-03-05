@@ -1,0 +1,526 @@
+//=================================================
+// Typography
+//=================================================
+
+/*=============================
+// Headings
+=============================*/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    &:not([class*='-title']):not([class*='__title']):not([class*='-heading']):not([class*='__heading']):not([class*='-header']):not([class*='-t-head']) {
+        color: $body_headline_color;
+    }
+
+    font-family: $font_secondary_bold;
+    font-weight: 700;
+    line-height: 1.31;
+    @include lhCrop-b(1.31, 0.80);
+    
+    &:last-child {
+        margin-bottom: 0;
+        @include lhCrop-a(1.31, 0.75);
+    }
+
+    &.after {
+        @include lhCrop-a(1.31, 0.75);
+    }
+
+    a {
+        color: $body_headline_color;
+    }
+}
+
+h1, .h1 {
+    word-break: break-word;
+    margin-bottom: $space_pc_secondary - $h1_font_mb;
+    line-height: 1.45;
+
+    @include lhCrop-b(1.45, 0.75);
+
+    &:last-child {
+        @include lhCrop-a(1.45, 0.70);
+    }
+
+    &.after {
+        @include lhCrop-a(1.45, 0.70);
+    }
+
+    &.large {
+        font-size: 5.263rem;
+        line-height: 1.22;
+        margin-bottom: 0.434rem;
+        @include lhCrop-b(1.22, 0.75);
+
+        &:last-child {
+            @include lhCrop-a(1.22, 0.70);
+            margin-bottom: 0;
+        }
+
+        &.after {
+            @include lhCrop-a(1.22, 0.70);
+            margin-bottom: 0;
+        }
+
+        @media #{$media_xxl} {
+            font-size: 5.8823vw;
+        }
+
+        @media #{"(max-width: 780px)"} {
+            font-size: $h1-font-size;
+        }
+    }
+}
+
+h2, .h2 {
+    margin-bottom: $space_pc_secondary - $h2_font_mb;
+    line-height: 1.44;
+
+    @include lhCrop-b(1.44, 0.75);
+
+    &:last-child {
+        @include lhCrop-a(1.44, 0.70);
+    }
+
+    &.after {
+        @include lhCrop-a(1.44, 0.70);
+    }
+}
+
+h3, .h3 {
+    margin-bottom: $space_pc_secondary - $h3_font_mb;
+    line-height: 1.42;
+
+    @include lhCrop-b(1.42, 0.75);
+
+    &:last-child {
+        @include lhCrop-a(1.42, 0.70);
+    }
+
+    &.after {
+        @include lhCrop-a(1.42, 0.70);
+    }
+}
+
+h4, .h4 {
+    margin-bottom: $space_pc_secondary - $h4_font_mb;
+    line-height: 1.41;
+
+    @include lhCrop-b(1.41, 0.75);
+
+    &:last-child {
+        @include lhCrop-a(1.41, 0.70);
+    }
+
+    &.after {
+        @include lhCrop-a(1.41, 0.70);
+    }
+}
+
+h5, .h5 {
+    margin-bottom: $space_pc_secondary - $h5_font_mb;
+    line-height: 1.43;
+
+    @include lhCrop-b(1.43, 0.75);
+
+    &:last-child {
+        @include lhCrop-a(1.43, 0.70);
+    }
+
+    &.after {
+        @include lhCrop-a(1.43, 0.70);
+    }
+}
+
+h6, .h6 {
+    margin-bottom: $space_pc_secondary - $h6_font_mb;
+    line-height: 1.42;
+
+    @include lhCrop-b(1.42, 0.75);
+
+    &:last-child {
+        @include lhCrop-a(1.42, 0.70);
+    }
+
+    &.after {
+        @include lhCrop-a(1.42, 0.70);
+    }
+}
+
+/*=============================
+// Paragraph
+=============================*/
+p {
+    line-height: 1.79;
+    font-size: 1rem;
+    margin-bottom: 0;
+    @include lhCrop-b(1.79, 0.80);
+
+    &:last-child {
+        @include lhCrop-a(1.79, 0.70);
+
+        &[class*="bg-"] {
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    &.before {
+        @include lhCrop-b(1.79, 0.80);
+    }
+
+    &.after {
+        @include lhCrop-a(1.79, 0.70)
+    }
+
+    &.no-before {
+        &:before {
+            display: none !important;
+        }
+    }
+
+    &.no-after {
+        &:after {
+            display: none !important;
+        }
+    }
+
+    &.p-small {
+        font-size: $f_size_df;
+    }
+    
+    &.p-large {
+        font-size: $f_size_lg * 1.3;
+    }
+}
+
+span {
+    &.s-small {
+        font-size: $f_size_df;
+    }
+    
+    &.s-large {
+        font-size: $f_size_lg * 1.3;
+    }
+}
+
+i {
+    &.i-small-xs {
+        font-size: 0.684rem;
+    }
+
+    &.i-small {
+        font-size: $f_size_df;
+    }
+
+    &.i-large {
+        font-size: $f_size_lg * 1.3;
+    }
+}
+
+.small, small {
+    line-height: 1.51;
+    @include lhCrop-b(1.51, 0.80);
+
+    &:last-child {
+        @include lhCrop-a(1.51, 0.70);
+    }
+}
+
+// Bold
+strong, b {
+    font-family: $font_primary_bold;
+    font-weight: 700;
+}
+
+.site-main {
+    p {
+        margin-bottom: $space_pc_secondary - $p_font_mb;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/*=============================
+// Blockquote
+=============================*/
+blockquote, .blockquote {
+    @extend .style-default;
+    font-family: $font_primary_bold;
+    font-weight: 700;
+    font-style: italic;
+    border-left: 2px solid $body_main_element_secondary_color;
+    color: $body_main_element_secondary_color;
+    padding-left: 1.474rem;
+    line-height: 1.79;
+    margin-bottom: $space_pc_secondary;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+    
+    p {
+        &:after, &:before {
+            display: none;
+        }
+        
+        &:last-child {
+            margin-bottom: 0;
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+/*=============================
+// Lists
+=============================*/
+ul {
+    list-style: none;
+    margin-left: 1.3rem;
+    padding: 0;
+
+    li {
+        line-height: 1.79;
+        margin-bottom: $space_pc_secondary - $li_font_mb;
+        @include lhCrop-b(1.79, 0.80);
+
+        &:last-child {
+            @include lhCrop-a(1.79, 0.70);
+            margin-bottom: 0;
+        }
+
+        &:before {
+            content: "\2022";
+            color: $body_links_color;
+            width: 1rem;
+            font-size: 0.6rem;
+            position: relative;
+            top: 0.3rem;
+            margin-left: -1.2rem;
+        }
+    }
+    
+    ol, ul {
+        margin-top: $space_pc_secondary - $li_font_mb;
+    }
+}
+
+ol {
+    margin-left: 0.94rem;
+    padding: 0;
+
+    li {
+        line-height: 1.79;
+        @include lhCrop-b(1.79, 0.80);
+        margin-bottom: $space_pc_secondary - $li_font_mb;
+        
+        &:last-child {
+            @include lhCrop-a(1.79, 0.70);
+            margin-bottom: 0;
+        }
+        
+        ul {
+            > li {
+                &:before {
+                    content: "\2022";
+                }
+            }
+        }
+        
+        ol {
+            > li {
+                &:before {
+                    content: "";
+                }
+            }
+        }
+        
+        strong, p {
+            line-height: 1.79;
+        }
+        
+        p {
+            @include lhCrop-b(1.79, 0.80);
+            margin-top: $space_pc_secondary - $li_font_mb;
+            margin-bottom: $space_pc_secondary - $li_font_mb;
+            
+            &:first-child {
+                margin-top: 0;
+            }
+            
+            &:last-child {
+                @include lhCrop-a(1.79, 0.70);
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    ol, ul {
+        margin-top: $space_pc_secondary - $li_font_mb;
+    }
+}
+
+// List unstyled
+.list-unstyled {
+    margin-left: 0;
+        
+    li {
+        @include lhCrop-a(1.79, 0.70);
+        
+        &:before {
+            content: "";
+        }
+    }
+}
+
+.list-inline {
+    margin-left: 0;
+
+    .list-inline-item {
+        margin-bottom: 0 !important;
+
+        &:before {
+            content: "";
+        }
+    }
+}
+
+address, dl, ol, ul, pre {
+    margin-bottom: $space_pc_secondary;
+                
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+address, dl {
+    line-height: 1.79;
+    @include lhCrop-b(1.79, 0.80);
+    
+    &:last-child {
+        @include lhCrop-a(1.79, 0.70);
+    }
+}
+
+pre {
+    line-height: 1.79;
+}
+
+/*=============================
+// Emphasis
+=============================*/
+mark, .mark {
+    background-color: $body_mark_background;
+    padding: 0 0.2em;
+}
+
+/*=============================
+// Text format
+=============================*/
+.regular {
+    font-family: $font_primary !important;
+    font-weight: 400;
+}
+
+.medium {
+    font-family: $font_primary_medium !important;
+    font-weight: 500;
+}
+
+.bold {
+    font-family: $font_primary_bold !important;
+    font-weight: 700;
+}
+
+.secondary-regular {
+    font-family: $font_secondary !important;
+    font-weight: 400;
+}
+
+.secondary-bold {
+    font-family: $font_secondary_bold !important;
+    font-weight: 700;
+}
+
+/*=============================
+// Text color
+=============================*/
+.text-secondary {
+    color: $body_text_secondary_color !important;
+}
+
+a.text-secondary {
+    &:hover {
+        color: $body_links_hover_color !important;
+    }
+}
+
+/*=============================
+// Hr
+=============================*/
+hr {
+    margin-top: 0;
+    margin-bottom: $space_pc_secondary;
+                
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.hr {
+    border-bottom: 1px solid $hr_border_color;
+    margin-bottom: $space_pc_secondary !important;
+}
+
+/*=============================
+// Pullquote
+=============================*/
+[class*="pullquote"] {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    
+    .blockquote, blockquote {
+        font-style: normal;
+        border: 0;
+        padding-left: 0;
+        
+        cite {
+            font-style: normal;
+        }
+    }
+}
+
+/*=============================
+// Caption
+=============================*/
+caption {
+    font-size: $f_size_df;
+    padding-top: $space_pc_secondary / 2;
+    padding-bottom: 0;
+    line-height: 1.79;
+    @include lhCrop-b(1.79, 0.80);
+    @include lhCrop-a(1.79, 0.70);
+}
+
+/*=============================
+// Figure
+=============================*/
+figure {
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    figcaption {
+        font-size: $figure-caption-font-size;
+        text-align: center;
+        margin-top: $space_pc_secondary / 2;
+        margin-bottom: 0;
+        line-height: 1.79;
+        @include lhCrop-b(1.79, 0.80);
+        @include lhCrop-a(1.79, 0.70);
+    }
+}

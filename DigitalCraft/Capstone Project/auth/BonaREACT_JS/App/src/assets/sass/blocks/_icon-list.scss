@@ -1,0 +1,50 @@
+//=================================================
+// Icon list
+//=================================================
+
+.icon-list {
+	border-top: 1px solid $body_border_color;
+	padding-top: $space_lg;
+	margin-top: $space_lg;
+
+	.icon-list-items {
+		@extend .d-flex;
+		@extend .justify-content-between;
+		@extend .align-items-center;
+		margin-left: -$space_xs / 2;
+		margin-right: -$space_xs / 2;
+		margin-bottom: -$space_xs;
+
+		@media #{$media_xl} {
+			flex-wrap: wrap !important;
+			justify-content: space-between !important;
+		}
+
+		.icon-list-item {
+			@extend .d-flex;
+			@extend .align-self-start;
+			padding-left: $space_xs / 2;
+			padding-right: $space_xs / 2;
+			padding-bottom: $space_xs;
+
+			@media #{$media_md} {
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+
+			> * {
+				position: relative;
+				font-family: $font_primary_bold;
+				font-weight: 700;
+				color: $body_headline_color;
+
+				[class*='fa-'] {
+					position: relative;
+					top: 0.263rem;
+					padding-right: $space_xs / 2;
+					color: $body_main_element_primary_color;
+				}
+			}
+		}
+	}
+}

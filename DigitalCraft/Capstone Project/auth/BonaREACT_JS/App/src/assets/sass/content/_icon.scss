@@ -1,0 +1,57 @@
+//=================================================
+// Icons
+//=================================================
+
+.fas {
+	&.fas-space-l {
+		padding-left: 0.737rem;
+	}
+
+	&.fas-space-r {
+		padding-right: 0.737rem;
+	}
+}
+
+.search-form {
+	.search {
+		.fas {
+			&.fa-search {
+				font-size: 0.85rem;
+			}
+		}
+	}
+}
+
+/*=============================
+// Close
+=============================*/
+.close {
+	opacity: 1;
+	@extend .transition-all;
+
+	> span {
+		&:not(.adveits-i) {
+			@include lhCrop-b(1, 0.55);
+			@include lhCrop-a(1, 0.55);
+		}
+	}
+
+	&:hover {
+		color: $body_links_hover_color;
+		@extend .transition-all;
+
+		.adveits-i {
+			&.adv-close {
+				span {
+					background-color: $body_links_hover_color;
+				}
+			}
+		}
+	}
+
+	&:not(:disabled):not(.disabled) {
+		&:hover, &:focus {
+			opacity: 1;
+		}
+	}
+}

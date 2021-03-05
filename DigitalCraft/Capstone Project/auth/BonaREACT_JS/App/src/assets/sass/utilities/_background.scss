@@ -1,0 +1,274 @@
+//=================================================
+// Background
+//=================================================
+
+.bg-fixed {
+    background-attachment: fixed;
+}
+
+.bg-dark {
+    h1, h2, h3, h4, h5, h6, a, p {
+        color: $body_text_tertiary_color;
+    }
+}
+
+.bg {
+    &-gray {
+        background-color: $gray;
+    }
+
+    &-gray-light {
+        background-color: $gray-light;
+
+        &.before-block {
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: -10.526rem;
+                height: 100%;
+                width: 100%;
+                background: $gray-light;
+                z-index: -1;
+            }
+        }
+    }
+
+    &-gray-dark {
+        background-color: $gray-dark;
+    }
+
+    &-white {
+        background-color: $white;
+    }
+
+    &-blue {
+        background-color: $blue;
+    }
+
+    &-indigo {
+        background-color: $indigo;
+    }
+
+    &-purple {
+        background-color: $purple;
+    }
+
+    &-pink {
+        background-color: $pink;
+    }
+
+    &-red {
+        background-color: $red;
+    }
+
+    &-orange {
+        background-color: $orange;
+    }
+
+    &-yellow {
+        background-color: $yellow;
+    }
+
+    &-green {
+        background-color: $green;
+    }
+
+    &-teal {
+        background-color: $teal;
+    }
+
+    &-cyan {
+        background-color: $cyan;
+    }
+}
+
+/*=============================
+// Background full width
+=============================*/
+// White
+.bg-white-full-width {
+    position: relative;
+    background: $white;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: calc(50vw - 50%);
+        left: calc(-50vw + 50%);
+        background: $white;
+
+        @media #{$media_lg} {
+            width: $wrapper_p_l_sm;
+            left: -$wrapper_p_l_sm;
+        }
+    }
+
+    &:after {
+        left: auto;
+        right: calc(-50vw + 50%);
+
+        @media #{$media_lg} {
+            right: -$wrapper_p_r_sm;
+        }
+    }
+}
+
+// Gray
+.bg-gray-full-width {
+    position: relative;
+    background: $gray;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: calc(50vw - 50%);
+        left: calc(-50vw + 50%);
+        background: $gray;
+
+        @media #{$media_lg} {
+            width: $wrapper_p_l_sm;
+            left: -$wrapper_p_l_sm;
+        }
+    }
+
+    &:after {
+        left: auto;
+        right: calc(-50vw + 50%);
+
+        @media #{$media_lg} {
+            right: -$wrapper_p_r_sm;
+        }
+    }
+}
+
+// Gray light
+.bg-gray-light-full-width {
+    position: relative;
+    background: $gray-light;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: calc(50vw - 50%);
+        left: calc(-50vw + 50%);
+        background: $gray-light;
+
+        @media #{$media_lg} {
+            width: $wrapper_p_l_sm;
+            left: -$wrapper_p_l_sm;
+        }
+    }
+
+    &:after {
+        left: auto;
+        right: calc(-50vw + 50%);
+
+        @media #{$media_lg} {
+            right: -$wrapper_p_r_sm;
+        }
+    }
+}
+
+// Gray dark
+.bg-gray-dark-full-width {
+    position: relative;
+    background: $gray-dark;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: calc(50vw - 50%);
+        left: calc(-50vw + 50%);
+        background: $gray-dark;
+
+        @media #{$media_lg} {
+            width: $wrapper_p_l_sm;
+            left: -$wrapper_p_l_sm;
+        }
+    }
+
+    &:after {
+        left: auto;
+        right: calc(-50vw + 50%);
+
+        @media #{$media_lg} {
+            right: -$wrapper_p_r_sm;
+        }
+    }
+}
+
+// Light
+.bg-light-full-width {
+    position: relative;
+    background: $light;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: calc(50vw - 50%);
+        left: calc(-50vw + 50%);
+        background: $light;
+
+        @media #{$media_lg} {
+            width: $wrapper_p_l_sm;
+            left: -$wrapper_p_l_sm;
+        }
+    }
+
+    &:after {
+        left: auto;
+        right: calc(-50vw + 50%);
+
+        @media #{$media_lg} {
+            right: -$wrapper_p_r_sm;
+        }
+    }
+}
+
+// Dark
+.bg-dark-full-width {
+    position: relative;
+    background: $dark;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: calc(50vw - 50%);
+        left: calc(-50vw + 50%);
+        background: $dark;
+
+        @media #{$media_lg} {
+            width: $wrapper_p_l_sm;
+            left: -$wrapper_p_l_sm;
+        }
+    }
+
+    &:after {
+        left: auto;
+        right: calc(-50vw + 50%);
+
+        @media #{$media_lg} {
+            right: -$wrapper_p_r_sm;
+        }
+    }
+}

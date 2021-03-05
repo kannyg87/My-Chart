@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "Surgery to correct acquired heart disease",
+        "price": "From $4300"
+    },
+    {
+        "id": 2,
+        "title": "Aortic surgery",
+        "price": "From $3765"
+    },
+    {
+        "id": 3,
+        "title": "Heart valve prosthesis",
+        "price": "From $3765"
+    },
+    {
+        "id": 4,
+        "title": "Surgery to restore the left ventricle of the heart",
+        "price": "From $3765"
+    }
+]

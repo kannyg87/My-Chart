@@ -1,0 +1,36 @@
+//=================================================
+// 404
+//=================================================
+
+.error404 {
+    #page-title {
+        h1 {
+            font-size: 12.5vw;
+
+            @media #{"(max-width: 910px)"} {
+                font-size: 7.526rem;
+            }
+        }
+    }
+
+    #page-content {
+        .content {
+            text-align: center;
+
+            .text {
+                max-width: 780px;
+                margin: auto;
+            }
+
+            .form {
+                max-width: 780px;
+                margin: auto;
+                padding-top: $space_lg;
+            }
+
+            .button {
+                padding-top: $space_lg;
+            }
+        }
+    }
+}

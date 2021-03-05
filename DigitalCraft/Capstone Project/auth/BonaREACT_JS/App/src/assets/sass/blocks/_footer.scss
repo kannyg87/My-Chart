@@ -1,0 +1,35 @@
+//=================================================
+// Footer
+//=================================================
+
+.site-footer {
+    .wrapper {
+        position: relative;
+
+        .footer {
+            border-top: 1px solid $body_border_color;
+            padding-top: $footer_padding_t;
+            padding-bottom: $footer_padding_b;
+
+            .d-flex {
+                > div {
+                    margin-bottom: $space_lg;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .copyright {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.footer-no-border {
+    position: relative;
+    z-index: 2;
+    margin-bottom: -1px;
+}

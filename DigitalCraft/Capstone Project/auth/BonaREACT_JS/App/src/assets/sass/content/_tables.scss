@@ -1,0 +1,57 @@
+//=================================================
+// Tables
+//=================================================
+
+table {
+    th {
+        font-family: $font_primary_bold;
+        font-weight: 700;
+    }
+
+    &:not(.table-dark) {
+        th {
+            color: $body_headline_color;
+        }
+    }
+
+    th, td {
+        border: 1px solid $body_border_color;
+        padding: 0.8rem 1rem;
+    }
+}
+
+[class*="calendar"] {
+    th {
+        font-family: $font_primary_bold;
+        font-weight: 700;
+    }
+
+    &:not(.table-dark) {
+        th {
+            background: transparent;
+            color: $body_headline_color;
+        }
+    }
+
+    th, td {
+        border: 1px solid $body_border_color !important;
+        padding: 0.8rem 0 !important;
+        text-align: center;
+    }
+
+    tfoot {
+        a {
+            color: $body_links_color;
+            text-decoration: none;
+
+            &:hover {
+                color: $body_links_hover_color;
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 700;
+    }
+}

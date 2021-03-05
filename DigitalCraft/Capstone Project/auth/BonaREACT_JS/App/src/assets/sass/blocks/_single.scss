@@ -1,0 +1,164 @@
+//=================================================
+// Single
+//=================================================
+
+#single {
+    .single-content {
+        .img {
+            margin-bottom: $space_md;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .meta {
+            margin-top: $space_md - 0.415rem;
+            color: $body_text_primary_color;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            p {
+                font-size: $f_size_lg;
+            }
+
+            span {
+                margin-right: 1.316rem;
+
+                &:before {
+                    content: "\02015";
+                    color: $body_text_primary_color;
+                    width: 1rem;
+                    font-size: 0.6rem;
+                    padding-right: 0.526rem;
+                    transition: color $transition-s ease;
+                    position: relative;
+                    top: -0.158rem;
+                }
+
+                &.category {
+                    span {
+                        &:before {
+                            display: none;
+                        }
+
+                        margin-right: 0.263rem;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &.date {
+                    margin-right: $space_xs;
+                }
+
+                a {
+                    color: inherit;
+
+                    &:hover {
+                        color: $body_links_color;
+                    }
+                }
+            }
+        }
+
+        .title {
+            padding-top: $space_md;
+
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+
+        .description {
+            margin-top: $space_md - 0.415rem;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            input, textarea, select  {
+                @extend .form-lg;
+            }
+
+            [class*='tag-cloud'] {
+                display: table;
+                line-height: normal;
+                word-break: break-all;
+                margin-right: -1.053rem;
+                margin-top: -1.053rem;
+
+                .tag-cloud-link {
+                    @extend .btn;
+                    @extend .btn-primary;
+                    @extend .btn-sm;
+                    @extend .min-w-auto;
+                    margin-top: 1.053rem;
+                    margin-right: 1.053rem;
+                    font-size: $f_size_sm !important;
+                }
+            }
+        }
+
+        .tags {
+            padding-top: $space_md;
+            padding-bottom: $space_md;
+            border-bottom: 1px solid $body_border_color;
+
+            &:last-child {
+                border-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            p {
+                display: table;
+                line-height: normal;
+                word-break: break-all;
+                margin-right: -1.053rem;
+                margin-top: -1.053rem;
+
+                &:before, &:after {
+                    display: none;
+                }
+
+                a {
+                    @extend .btn;
+                    @extend .btn-primary;
+                    @extend .btn-sm;
+                    @extend .min-w-auto;
+                    margin-top: 1.053rem;
+                    margin-right: 1.053rem;
+                    font-size: $f_size_sm;
+                }
+            }
+        }
+    }
+}
+
+/*=============================
+// Single post
+=============================*/
+.single-post, [class*='single-'] {
+    #single {
+        .single-content {
+            .img {
+                min-height: 350px;
+                max-height: 620px;
+
+                &.object-fit {
+                    &:before {
+                        padding-top: 58.86%;
+                    }
+                }
+            }
+        }
+    }
+}

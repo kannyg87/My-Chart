@@ -1,0 +1,57 @@
+//=================================================
+// Alert
+//=================================================
+
+$alert_link_success_color: theme-color-level(success, $alert-color-level);
+$alert_link_info_color:    theme-color-level(info, $alert-color-level);
+$alert_link_danger_color:  theme-color-level(danger, $alert-color-level);
+
+.alert {
+    @extend .style-default;
+}
+
+[class*='alert-dismiss'] {
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    padding: 3px;
+    font-size: 20px;
+    line-height: 1;
+    background: transparent;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+// Contact form
+.wpcf7-form {
+    [class*='response-output'] {
+        @extend .alert;
+        height: 100% !important;
+        border: 1px solid transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: $f_size_lg;
+    }
+
+    &.invalid, &.unaccepted, &.spam, &.failed, &.aborted {
+        [class*='response-output'] {
+            @extend .alert-danger;
+            border-color: theme-color-level(danger, $alert-border-level) !important;
+        }
+    }
+
+    &.sent {
+        [class*='response-output'] {
+            @extend .alert-success;
+            border-color: theme-color-level(success, $alert-border-level) !important;
+        }
+    }
+
+    &.invalid, &.unaccepted, &.spam, &.failed, &.aborted, &.sent {
+        [class*='response-output'] {
+            margin-top: $alert_margin_bottom !important;
+            padding: $alert_padding_y $alert_padding_x !important;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+[
+    {
+        "id": "1",
+        "title": "5 Reasons to have Aortic Surgery",
+        "link": "/news-single-post",
+        "cardTitle": "5 Reasons to have Aortic Surgery",
+        "imgLink": "assets/img/placeholder/507x507.jpg",
+        "imgAlt": "5 Reasons to have Aortic Surgery",
+        "categoryTitle": "Health care",
+        "categoryLink": "/news",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+        "id": "2",
+        "title": "Which Diagnostic Should I Choose?",
+        "link": "/news-single-post",
+        "cardTitle": "Which Diagnostic Should I Choose?",
+        "imgLink": "assets/img/placeholder/507x507.jpg",
+        "imgAlt": "Which Diagnostic Should I Choose?",
+        "categoryTitle": "Services",
+        "categoryLink": "/news",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+        "id": "3",
+        "title": "How to Fight Dental Caries Effectively?",
+        "link": "/news-single-post",
+        "cardTitle": "How to Fight Dental Caries Effectively?",
+        "imgLink": "assets/img/placeholder/507x507.jpg",
+        "imgAlt": "How to Fight Dental Caries Effectively?",
+        "categoryTitle": "Medicine",
+        "categoryLink": "/news",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+]

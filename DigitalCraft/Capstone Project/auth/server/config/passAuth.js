@@ -10,10 +10,11 @@ let options = {
 }
 
 let localLogin = new LocalStrategy(options, async (email, password, done)=>{
+    
     try{
     // check to see if email is in our db 
         let records = await db.user.findAll({where: {email: email}}); 
-
+        console.log(records);
         if(records !== null){
          //encrypt password and compare to password in db 
             bcrypt.compare(password, records[0].password, (err, isMatch)=>{

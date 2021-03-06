@@ -72,6 +72,5 @@ export const signout = (cb) => {
 
         cb();
     }
-      
     
 }

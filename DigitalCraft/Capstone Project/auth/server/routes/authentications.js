@@ -31,16 +31,18 @@ router.post('/signin', requireSignin,(req,res) => {
 })
 
 router.post('/signup', async (req,res) => {
-    let firstName = req.body.firstName;
-    let lastName = req.body.lastName;
+    // let firstName = req.body.firstName;
+    // let lastName = req.body.lastName;
     let email = req.body.email;
-    let adress = req.body.adress;
+    // let adress = req.body.adress;
     let password = bcrypt.hashSync(req.body.password, 8);
-    let confirmPassword = bcrypt.hashSync(req.body.confirmPassword, 8);
+    // let confirmPassword = bcrypt.hashSync(req.body.confirmPassword, 8);
     try{
     let records = await db.user.findAll({where:{email:email}});
         if (records.length ===0){
-            let user = await db.user.create({firstName: firstName, lastName: lastName, email: email, adress: adress, password:password, confirmPassword: confirmPassword})
+            //let user = await db.user.create({firstName: firstName, lastName: lastName, email: email, adress: adress, password: password, confirmPassword: confirmPassword})
+            let user = await db.user.create({ email: email, password: password})
+            
             let jwtToken = token(user); //token returns a jwt
 
             return res.json({token: jwtToken}); //passing a jwt to client

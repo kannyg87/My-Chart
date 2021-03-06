@@ -3,7 +3,7 @@ import React from 'react';
 const Copyright = () => {
     return (
         <div className="copyright">
-            <p>© { new Date().getFullYear() } Health & Medical React JS Template by <a href="https://www.adveits.com">Adveits</a></p>
+            <p>© { new Date().getFullYear() } Health & Medical Application by <a href="https://www.kanny.us" target="_blank">Kanny Mohamad</a></p>
         </div>
     );
 };

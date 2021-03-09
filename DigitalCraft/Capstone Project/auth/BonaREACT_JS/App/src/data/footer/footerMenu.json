@@ -2,20 +2,20 @@
     {
         "id": "1",
         "title": "Facebook",
-        "link": "https://www.facebook.com/adveits/",
+        "link": "https://www.facebook.com/kanny.ghafour",
         "icon": "fab fa-facebook-f"
     },
     {
         "id": "2",
         "title": "LinkedIn",
-        "link": "https://www.linkedin.com/company/18135051/",
+        "link": "https://www.linkedin.com/in/kannymohamad/",
         "icon": "fab fa-linkedin-in"
     },
     {
         "id": "3",
         "title": "Instagram",
-        "link": "https://www.instagram.com/adveits/",
-        "icon": "fab fa-instagram"
+        "link": "https://github.com/kannyg87",
+        "icon": "fab fa-github"
     },
     {
         "id": "4",

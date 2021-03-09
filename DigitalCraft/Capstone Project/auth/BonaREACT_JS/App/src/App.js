@@ -2,19 +2,14 @@ import React from 'react';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import About from './pages/About';
-import Contacts from './pages/Contacts';
-import News from './pages/News';
-import NewsSinglePost from './pages/NewsSinglePost';
-import Gallery from './pages/Gallery';
-import SearchResults from './pages/SearchResults';
+import AdminDashboard from './pages/AdminDashboard';
+import PatientDashboard from './pages/PatientDashboard';
 // import Services from './pages/Services';
 // import ServicesInside from './pages/ServicesInside';
 import page404 from './pages/404';
 import UserInterface from './pages/UserInterface';
 import Signup from './pages/loging';
 import Signin from './blocks/login/auth/signin'
-import Signout from './blocks/login/auth/Signout'
 
 import {createStore, applyMiddleware, compose} from 'redux';
 import reduxThunk from 'redux-thunk';
@@ -45,33 +40,13 @@ function App() {
                 />
                 <Route
                     exact
-                    path={ `${ process.env.PUBLIC_URL + "/about-us" }` }
-                    component={ About }
+                    path={ `${ process.env.PUBLIC_URL + "/admin-dashboard" }` }
+                    component={ AdminDashboard }
                 />
                 <Route
                     exact
-                    path={ `${ process.env.PUBLIC_URL + "/contacts" }` }
-                    component={ Contacts }
-                />
-                <Route
-                    exact
-                    path={ `${ process.env.PUBLIC_URL + "/news" }` }
-                    component={ News }
-                />
-                <Route
-                    exact
-                    path={ `${ process.env.PUBLIC_URL + "/gallery" }` }
-                    component={ Gallery }
-                />
-                <Route
-                    exact
-                    path={ `${ process.env.PUBLIC_URL + "/news-single-post" }` }
-                    component={ NewsSinglePost }
-                />
-                <Route
-                    exact
-                    path={ `${ process.env.PUBLIC_URL + "/search-results" }` }
-                    component={ SearchResults }
+                    path={ `${ process.env.PUBLIC_URL + "/patient-dashboard" }` }
+                    component={ PatientDashboard }
                 />
                 {/* <Route
                     exact
@@ -97,11 +72,6 @@ function App() {
                     exact
                     path={ `${ process.env.PUBLIC_URL + "/signin" }` }
                     component={ Signin}
-                />
-                <Route
-                    exact
-                    path={ `${ process.env.PUBLIC_URL + "/signout" }` }
-                    component={ Signout}
                 />
                 <Route exact component={ page404 } />
             </Switch>

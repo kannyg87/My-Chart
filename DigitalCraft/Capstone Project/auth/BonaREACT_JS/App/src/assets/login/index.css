@@ -7,10 +7,9 @@
     display: flex;
     font-weight: 400;
     font-family: sans-serif;
-    background: #12c2e9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #443e68, #9389ce, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #4fabf6, #abaec9, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+    background: #12c2e9;  
+    background: -webkit-linear-gradient(to right, #cfe0e8,#FFFFFF, #daebe8);  
+    background: linear-gradient(to right, #cfe0e8,#FFFFFF, #daebe8);
   }
   
   body, html, .App, #root, .outer {

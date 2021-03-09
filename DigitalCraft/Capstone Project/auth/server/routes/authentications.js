@@ -26,22 +26,65 @@ router.get('/',requireAuth,(req,res) => {
     res.send("hello world")
 });
 
-router.post('/signin', requireSignin,(req,res) => {
-    res.json({token: token(req.user)})
+router.get('/user-from-token', requireAuth, async (req, res) => {
+    const information = jwt.decode(req.headers.authorization, config.secret);
+
+    const user = await db.user.findByPk(information.sub);
+
+    if (!user) {
+        throw new Error('User does not exist');
+    }
+
+    res.send({
+        user: {
+            id: user.id,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            role: user.role,
+        },
+    });
+});
+
+router.post('/signin', requireSignin, async (req,res) => {
+    const records = await db.user.findAll({where:{email: req.user.email}});
+
+    if (records.length !== 1) {
+        res.json({
+            errorMessage: 'Users could not be found',
+        });
+        return;
+    }
+
+    const user = records[0];
+
+    res.json({
+        token: token(req.user),
+        user: {
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            role: user.role,
+        },
+    })
 })
 
 router.post('/signup', async (req,res) => {
-    // let firstName = req.body.firstName;
-    // let lastName = req.body.lastName;
+    let firstName = req.body.firstName;
+    let lastName = req.body.lastName;
     let email = req.body.email;
-    // let adress = req.body.adress;
     let password = bcrypt.hashSync(req.body.password, 8);
-    // let confirmPassword = bcrypt.hashSync(req.body.confirmPassword, 8);
     try{
     let records = await db.user.findAll({where:{email:email}});
         if (records.length ===0){
-            //let user = await db.user.create({firstName: firstName, lastName: lastName, email: email, adress: adress, password: password, confirmPassword: confirmPassword})
-            let user = await db.user.create({ email: email, password: password})
+            let user = await db.user.create({
+                firstName,
+                lastName,
+                email,
+                password,
+                role: 'patient',
+            })
+            //let user = await db.user.create({ email: email, password: password})
             
             let jwtToken = token(user); //token returns a jwt
 

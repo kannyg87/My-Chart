@@ -9,7 +9,8 @@ import {useHistory} from 'react-router-dom'
 
 const Signup = () => {
 
-    
+    const [firstName, setfirstName] = useState('');
+    const [lastName, setlastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch();
@@ -23,11 +24,13 @@ const Signup = () => {
       //dispatch(sinup(), cb)
 
     dispatch(signUp({
+        firstName: firstName,
+        lastName: lastName,
         email: email,
         password: password
         }, ()=>{
         console.log('pushing to another page');
-        history.push('/feature');
+        history.push('/patient-dashboard');
         }))
     }
         return (<>
@@ -35,12 +38,12 @@ const Signup = () => {
                 <h3>Register</h3>
                 <div className="form-group">
                     <label>First name</label>
-                    <input type="text" className="form-control" placeholder="First name" />
+                    <input type="text" onChange={(e)=>setfirstName(e.target.value)} value={firstName} className="form-control" placeholder="First name" />
                 </div>
 
                 <div className="form-group">
                     <label>Last name</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
+                    <input type="text" onChange={(e)=>setlastName(e.target.value)} value={lastName} className="form-control" placeholder="Last name" />
                 </div>
 
                 <div className="form-group">

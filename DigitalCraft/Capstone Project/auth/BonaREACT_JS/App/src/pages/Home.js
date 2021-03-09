@@ -1,23 +1,30 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import MetaTags from 'react-meta-tags';
+import { connect, useDispatch } from 'react-redux';
 
 import Loading from '../blocks/loading/Loading';
 import Header from '../blocks/header/Header';
 import Footer from '../blocks/footer/Footer';
 
+import { fetchUserByToken } from '../actions';
+
 import PageTitleHome from '../blocks/page-title/PageTitleHome';
-import ServicesHome from '../blocks/services/ServicesHome';
-import AboutUs from '../blocks/about/AboutUs';
-import AboutReviews from '../blocks/about/AboutReviews';
-import AboutOurDoctors from '../blocks/about/AboutOurDoctors';
-import HomeImg from '../blocks/home/HomeImg';
-import NewsHome from '../blocks/news/NewsHome';
-import ContactUs from '../blocks/home/ContactUsHome';
 
-
-const Home = () => {
+const Home = ({ auth }) => {
     document.body.classList.add( 'home' );
     document.body.classList.add( 'header-absolute-true' );
+    const dispatch = useDispatch();
+
+    useEffect(
+        () => {
+            const token = localStorage.getItem('token');
+
+            if (token) {
+                dispatch(fetchUserByToken(token, () => true));
+            }
+        },
+        [],
+    );
 
     return (
         <Fragment>
@@ -43,20 +50,6 @@ const Home = () => {
                 <div className="content">
                     <div className="clearfix">
                         <PageTitleHome />
-
-                        <AboutUs />
-
-                        <ServicesHome />
-
-                        <AboutReviews />
-
-                        <AboutOurDoctors />
-
-                        <HomeImg />
-
-                        <NewsHome />
-
-                        <ContactUs />
                     </div>
                 </div>
             </main>
@@ -66,4 +59,11 @@ const Home = () => {
     );
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+        
+    return{
+        auth: state.auth.authenticated
+    }
+}
+
+export default connect(mapStateToProps, null)(Home);

@@ -1,10 +1,21 @@
-import React from 'react';
-import HeaderLogo from '../../blocks/logo/HeaderLogo';
-import SearchModal from '../../components/modal/SearchModal';
-import MenuModal from '../../components/modal/MenuModal';
-import Actions from "../actions/Actions";
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { connect, useDispatch } from 'react-redux';
 
-const Header = ( { logoColor } ) => {
+import HeaderLogo from '../../blocks/logo/HeaderLogo';
+import {signout} from '../../actions/index';
+
+const Header = ( { logoColor, auth } ) => {
+    const { push } = useHistory();
+    const dispatch = useDispatch();
+
+    const logOut = () => {
+        dispatch(signout(()=>{
+            console.log('pushing to another page');
+            push('/');
+        }));
+    }
+
     return (
         <header id="header" className="site-header">
             <div className="wrapper">
@@ -25,12 +36,38 @@ const Header = ( { logoColor } ) => {
 
                     <div className="header-right d-flex justify-content-end">
                         <div className="d-flex align-items-center">
-                            <SearchModal />
+                            {
+                                !auth && (
+                                    <div className="search-toggle">
+                                        <button onClick={() => push('/signin')} type="button" className="btn btn-lg btn-before-horbar btn-link border-0 p-0 min-w-auto">Sign In</button>
+                                    </div>
+                                )
+                            }
 
-                            <MenuModal />
+                            {
+                                auth && auth.role === 'admin' && (
+                                    <div className="search-toggle">
+                                        <button onClick={() => push('/admin-dashboard')} type="button" className="btn btn-lg btn-before-horbar btn-link border-0 p-0 min-w-auto">My Dashboard</button>
+                                    </div>
+                                )
+                            }
+
+                            {
+                                auth && auth.role === 'patient' && (
+                                    <div className="search-toggle">
+                                        <button onClick={() => push('/patient-dashboard')} type="button" className="btn btn-lg btn-before-horbar btn-link border-0 p-0 min-w-auto">My Dashboard</button>
+                                    </div>
+                                )
+                            }
+
+                            {
+                                auth && (
+                                    <div className="search-toggle">
+                                        <button onClick={() => logOut()} type="button" className="btn btn-lg btn-before-horbar btn-link border-0 p-0 min-w-auto">Sign Out</button>
+                                    </div>
+                                )
+                            }
                         </div>
-
-                        <Actions />
                     </div>
                 </div>
             </div>
@@ -38,4 +75,11 @@ const Header = ( { logoColor } ) => {
     );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+        
+    return{
+        auth: state.auth.authenticated
+    }
+}
+
+export default connect(mapStateToProps, null)(Header);

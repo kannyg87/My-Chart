@@ -2,6 +2,65 @@
 import actionTypes from './actionTypes';
 import axios from 'axios';
 
+export const fetchUserByToken = (token, cb) => {
+    return async dispatch => {
+        try {
+            let response = await axios.get('http://localhost:3001/user-from-token', {
+                headers: {
+                    authorization: token,
+                },
+            });
+
+            dispatch({type: "AUTH_USER", data: response.data.user});
+        } catch(error) {
+            console.log(error);
+        }
+        cb();
+    };
+};
+
+export const fetchUsers = (token, cb) => {
+    return async dispatch => {
+        try {
+            const response = await axios.get('http://localhost:3001/users', {
+                headers: {
+                    authorization: token,
+                },
+            });
+
+            dispatch({ type: 'FETCHED_USERS', data: response.data.users });
+        } catch (error) {
+            console.log(error);
+        }
+        cb();
+    };
+};
+
+export const deleteUser = (userId, cb) => {
+    const token = localStorage.getItem('token');
+
+    return async dispatch => {
+        try {
+            await axios.delete(`http://localhost:3001/user?userId=${userId}`, {
+                headers: {
+                    authorization: token,
+                },
+            });
+
+            const response = await axios.get('http://localhost:3001/users', {
+                headers: {
+                    authorization: token,
+                },
+            });
+
+            dispatch({ type: 'FETCHED_USERS', data: response.data.users });
+        } catch (error) {
+            console.log(error);
+        }
+        cb();
+    };
+};
+
 export const signUp = (formData, cb) => {
     
     console.log(formData);
@@ -44,12 +103,12 @@ export const signin = (formData, cb) => {
         try{
             let response = await axios.post('http://localhost:3001/signin', formData);
 
-            dispatch({type: "AUTH_USER", data: response.data.token});
+            dispatch({type: "AUTH_USER", data: response.data.user});
 
-            console.log('signin', response.data.token);
+            console.log('signin', response.data);
             localStorage.setItem('token', response.data.token);
 
-            cb();
+            cb(response.data.user);
         }
         catch(e){
 

@@ -1,13 +1,17 @@
-import React, {useState} from "react";
+import React, {useState,Fragment} from "react";
 import Loading from '../../loading/Loading';
+import MetaTags from 'react-meta-tags';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Nav } from 'react-bootstrap';
+// import { Navbar, Nav } from 'react-bootstrap';
+import Header from '../../header/Header';
 import Footer from '../../footer/Footer';
 import  '../../../assets/login/index.css';
 import { Link } from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {signin} from '../../../actions/index';
 import {useHistory} from 'react-router-dom';
+
+
 
 const Signin = () => {
     const [email, setEmail] = useState('');
@@ -21,15 +25,37 @@ const Signin = () => {
         dispatch(signin({
         email: email,
         password: password
-        }, ()=>{
-        console.log('pushing to another page');
-        history.push('/feature');
+        }, (authenticatedUser) => {
+            console.log('pushing to another page');
+            const { role } = authenticatedUser;
+
+            if (role === 'admin')
+                history.push('/admin-dashboard');
+            else if (role === 'patient')
+                history.push('/patient-dashboard');
+            else
+                history.push('/i-dont-exist');
         }))
 
     }
         return ( <>
-            <Loading />            
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Fragment>
+         <MetaTags>
+                <meta charSet="UTF-8" />
+                <title>My Dashboard | Bona - Health & Medical ReactJS Template</title>
+
+                <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="description" content="" />
+                <meta name="keywords" content="" />
+                <meta name="robots" content="index, follow, noodp" />
+                <meta name="googlebot" content="index, follow" />
+                <meta name="google" content="notranslate" />
+                <meta name="format-detection" content="telephone=no" />
+            </MetaTags>
+            <Loading />  
+            <Header logoColor="dark" />          
+            {/* <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Navbar.Brand href="#home">My-Chart</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -41,8 +67,9 @@ const Signin = () => {
                     <Nav.Link href="/signout">Logout</Nav.Link>
                     </Nav>
             </Navbar.Collapse>
-            </Navbar> 
-            <div className="outer">
+            </Navbar>  */}
+        
+            <div className="outer container">
                 <div className="inner">
                 <form onSubmit={handleSubmit}  className="form">
                     <h3>Log in</h3>
@@ -71,6 +98,7 @@ const Signin = () => {
             </div>
             </div>
         <Footer />
+        </Fragment>
         </>
         );
     }

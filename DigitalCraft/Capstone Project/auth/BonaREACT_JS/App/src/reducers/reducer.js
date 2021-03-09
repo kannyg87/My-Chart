@@ -1,7 +1,8 @@
 import actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    authenticated: ""
+    authenticated: "",
+    users: [],
    
 }
 
@@ -14,6 +15,12 @@ const reducerTemplate = (state = initialState, action) => {
                 ...state, 
                 authenticated: action.data  //the jwt
             }
+
+        case "FETCHED_USERS":
+            return {
+                ...state,
+                users: [...action.data],
+            };
         default:
             return state;
     } 

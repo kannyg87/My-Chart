@@ -24,6 +24,7 @@ const AdminDashboard = (props) => {
     const dispatch = useDispatch();
     const { push } = useHistory();
     const [loading, setLoading] = useState(true);
+    const [userIdSelected, selectUserId] = useState(0);
 
     const checkForAuthenticatedUser = () => {
         if (loading) return;
@@ -71,6 +72,7 @@ const AdminDashboard = (props) => {
             immunization: e.target.immunization.value,
             medications: e.target.medications.value,
             notes:e.target.notes.value,
+            userId: props.users[userIdSelected].id,
         }
         dispatch(addRecord(records));
         e.target.testResults.value = "";
@@ -137,22 +139,39 @@ const AdminDashboard = (props) => {
             <h1>View Records</h1>
             <form onSubmit={handleEvent}>
                 <div class="form-group">
+                    <label for="exampleFormControlSelect1">Patient:</label>
+                    <select id="exampleFormControlSelect1" class="form-control" value={userIdSelected} onChange={(event) => selectUserId(event.target.value)}>
+                        {
+                            props.users.map((user, index) => {
+                                return (
+                                    <option key={user.id} value={index}>{`${user.firstName} ${user.lastName}`}</option>
+                                );
+                            })
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label for="exampleFormControlInput1">Test Results:</label>
                     <input type="text" class="form-control" id="testResults"  />
                 </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Immunization:</label>
-                <input type="text" class="form-control" id="immunization"  />
-            </div>
-            <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Medications:</label>
-                    <input type="text" class="form-control" id="medications"  />
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Notes:</label>
-                <textarea class="form-control" id="notes" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-info mb-5">Submit</button>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Immunization:</label>
+                    <input type="text" class="form-control" id="immunization"  />
+                </div>
+
+                <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Medications:</label>
+                        <input type="text" class="form-control" id="medications"  />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Notes:</label>
+                    <textarea class="form-control" id="notes" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-info mb-5">Submit</button>
         </form>
         </div>
         <div class="col-5 ">
@@ -165,7 +184,7 @@ const AdminDashboard = (props) => {
     <div class="row mt-5">
         <div class=" offset-1 col-9">
         <h1>Health Record:</h1>
-        <br/><Record />
+        <br/><Record users={props.users} />
         </div>
     </div>
 

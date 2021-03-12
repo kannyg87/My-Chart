@@ -15,6 +15,7 @@ const initialState ={
         SPECIMEN SOURCE: THROAT
         SPECIMEN QUALITY: ADEQUATE
         RESULT: No group A Streptococcus isolated`,
+        
         }
             ]
 };

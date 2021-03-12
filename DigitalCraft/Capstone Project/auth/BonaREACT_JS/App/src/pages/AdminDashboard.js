@@ -13,6 +13,8 @@ import {Img,ChartDivImg } from '../blocks/dashbord/dashbordStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import {v1 as uuidv1} from 'uuid';
+import {addRecord} from '../actions/record'
+import Record from '../blocks/dashbord/dashbordRecord'
 
 
 const AdminDashboard = (props) => {
@@ -68,10 +70,10 @@ const AdminDashboard = (props) => {
             testResults: e.target.testResults.value,
             immunization: e.target.immunization.value,
             medications: e.target.medications.value,
-            notes:e.target.notes.value
+            notes:e.target.notes.value,
         }
-        dispatch(addPayment(records));
-        e.target.name.value = "";
+        dispatch(addRecord(records));
+        e.target.testResults.value = "";
         e.target.immunization.value = "";
         e.target.medications.value= "";
         e.target.notes.value= "";
@@ -148,7 +150,7 @@ const AdminDashboard = (props) => {
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Notes:</label>
-                <textarea class="form-control" id="nots" rows="3"></textarea>
+                <textarea class="form-control" id="notes" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-info mb-5">Submit</button>
         </form>
@@ -161,9 +163,16 @@ const AdminDashboard = (props) => {
         </div>
     </div>
     <div class="row mt-5">
+        <div class=" offset-1 col-9">
+        <h1>Health Record:</h1>
+        <br/><Record />
+        </div>
+    </div>
+
+    <div class="row mt-5">
         <div class=" col-8 offset-1 ">
         <br/>
-        &nbsp;<h1>Patients:</h1>
+        &nbsp;<h1>Patients List:</h1>
         {
             props.users.length > 0 && (
             <table class="table table-hover table-dark ml-3">
@@ -197,6 +206,7 @@ const AdminDashboard = (props) => {
     </div>
     </div>
 </div>
+
     </main>
     <Footer />
 </Fragment>

@@ -1,22 +1,15 @@
 import React from 'react'
-import {useSelector,useDispatch} from 'react-redux';
-
-import { Paper} from './Styles';
-import {deletePayment} from '../../actions/record'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
-
-const Payment = () => {
-    const record = useSelector(state => state.records);
-    const dispatch = useDispatch();
-    const element = <FontAwesomeIcon icon={faTrash} />
-    deleteRecord
+import {useSelector} from 'react-redux';
+import DeleteRecord from './deleteRecord'
 
 
-console.log(record)
+
+const Record = () => {
+    const recordP = useSelector(state => state.recordP.records);
+console.log(recordP)
   return (
     <>
-        <Paper>
+       
       <div className="container-fluid"> 
         <table className="table table-dark">
             <thead>
@@ -30,7 +23,7 @@ console.log(record)
                 </tr>
             </thead>
         <tbody>
-            {bills.map(p =>{
+            {recordP.map(p =>{
         return (
         <tr>
             <th scope="row" key={p.id} ></th>
@@ -38,17 +31,15 @@ console.log(record)
             <td>{p.immunization}</td>
             <td>{p.medications}</td>
             <td>{p.notes} </td>
-            <td><button onClick={()=>dispatch(deletePayment(payment))} >{element}</button></td>
+            <td><DeleteRecord record={p} /></td>
         </tr>
         ) })}
     
         </tbody>
 </table>
-
 </div>
-</Paper>
 
     </>
 )}
 
-export default Payment
+export default Record

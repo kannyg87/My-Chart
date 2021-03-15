@@ -121,11 +121,10 @@ const AdminDashboard = (props) => {
             <div className=" col-6"><br />
 
                 <h2>Dr. Mayada Ismail, MD</h2>
-                <h3>GI Fellow at University Hospitals</h3>
+                <h3>GI fellow at university hospitals Cleveland medical center</h3>
                 
                 <p className="title">
-                        Axess Pointe Community Health Center Internal Medicine
-                        676 S Broadway St Ste 103, Akron, OH, 44311</p>
+                11100 Euclid Ave, Cleveland, OH 44106</p>
                 
                 
             </div>

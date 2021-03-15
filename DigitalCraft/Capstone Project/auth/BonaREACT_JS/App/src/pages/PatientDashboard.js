@@ -113,17 +113,17 @@ const PatientDashboard = (props) => {
 
                                 <div className="spacer p-top-xl">
                                     <div className="title">
-                                        <h2>Let’s talk or book now</h2>
+                                        {/* <h2>Let’s talk or book now</h2> */}
                                     </div>
 
                                     <div className="row gutter-width-sm with-pb-xl spacer p-top-lg">
                                         <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                                            <ContactsInside />
+                                            {/* <ContactsInside /> */}
                                         </div>
 
                                         <div className="col-xl-8 col-lg-8 col-md-8 col-sm-12">
                                             <div className="contact-form-shortcode">
-                                                <ContactForm />
+                                                {/* <ContactForm /> */}
                                             </div>
                                         </div>
                                     </div>

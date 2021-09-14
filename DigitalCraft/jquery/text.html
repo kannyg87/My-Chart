@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div>
+
+</div>
+<body>
+    <script>
+        fetch('https://www.anapioficeandfire.com/api/characters/2')
+        .then(response => response.json())
+        .then(data =>{
+            names = (data.aliases)
+            console.log(names);
+            var output = document.querySelector('div')
+            output.innerHTML= names
+        } );
+    </script>
+</body>
+</html>

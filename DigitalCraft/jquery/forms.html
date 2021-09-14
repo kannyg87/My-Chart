@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="password" placeholder="email">
+        <input type="radio">
+        <input type="checkbox">
+        <input type="password">
+        <button type="submit">Done</button>
+      </form>
+
+      <form action="/action_page.js">
+        <fieldset>
+          <legend>Personal information:</legend>
+          First name:<br>
+          <input type="text" name="firstname" value="Mickey"><br>
+          Last name:<br>
+          <input type="text" name="lastname" value="Mouse"><br><br>
+          <input type="submit" value="Submit">
+        </fieldset>
+      </form>
+
+<!-- validation -->
+      <form>
+        <label for="choose">Would you prefer a banana or cherry?</label>
+        <input id="choose" name="i_like" required>
+        <button>Submit</button>
+      </form>
+
+      <!-- Constraining the length of your entries -->
+      <form>
+        <div>
+          <label for="choose">Would you prefer a banana or a cherry?</label>
+          <input id="choose" name="i_like" required minlength="6" maxlength="6">
+        </div>
+        <div>
+          <label for="number">How many would you like?</label>
+          <input type="number" id="number" name="amount" value="1" min="1" max="10">
+        </div>
+        <div>
+            <input type="email" id="t2" name="email" required>
+          <button>Submit</button>
+        </div>
+      </form>
+      <!-- Pattern Matching -->
+      <form>
+        <label for="choose">Do you prefer css or html?</label>
+        <input id="choose" name="i_like" required pattern="css| html">
+        <button>Submit</button>
+      </form>
+      <!-- onsubmit -->
+      <form onsubmit="myFunction()">
+        Enter name: 
+        <input type="text">
+      </form>
+<!-- Action to bing uo an url or email  -->
+      <form action="mailto:email@email.com">
+        Enter name: 
+        <input type="text">
+        <button>action</button>
+      </form>
+
+      <script>
+  function myFunction() {
+    console.log("form submitted!")
+  };
+</script>
+
+      <!-- Email Validator -->
+     <script> 
+var email = document.getElementById("t2");
+email.addEventListener("input", function (event) {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("I expect an e-mail, darling!");
+  } else {
+    email.setCustomValidity("");
+  }
+
+  
+});
+
+</script>
+<!-- onsubmit -->
+<script>
+    function myFunction() {
+      console.log("form submitted!")
+    };
+  </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+</body>
+</html>
